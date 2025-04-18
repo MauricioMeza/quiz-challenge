@@ -3,13 +3,13 @@
 /*--------------------------------------------*/
 numbers = document.getElementById("numbers");
 respText = document.getElementById("response-text");
-const finalSound = new Audio('./resources/final.mp3');
+const finalSound = new Audio('./resources/Sounds/final.mp3');
 
-finalSound.play().catch((e)=> {console.log("Audio play failed:", e)});
 
 /*-----------------------------------*/
 /*------------SHOW SCORE ------------*/
 /*-----------------------------------*/
+finalSound.play().catch((e)=> {console.log("Audio play failed:", e)});
 if(localStorage.getItem("answers")){
     answerList = JSON.parse(localStorage.getItem("answers"));
     const trueCount = answerList.filter(answer => answer === true).length;
@@ -22,5 +22,6 @@ if(localStorage.getItem("answers")){
     localStorage.removeItem("answers");
     localStorage.removeItem("questionIndex");
     localStorage.removeItem("timer");
+    localStorage.removeItem("data");
 }
 

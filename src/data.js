@@ -1,4 +1,9 @@
-data = [
+
+/*----------------------------------------------------------------*/
+/*---------BURNT DATA IN CASE CONNECTION TO API FAILS-------------*/
+/*----------------------------------------------------------------*/
+
+var data = [
     {
         "id": 9593,
         "question": "What HTML element is used for indicating text that has been emphasized?",
@@ -320,3 +325,37 @@ data = [
         "difficulty": "Easy"
     }
 ]
+
+
+const confusingPhrases = [
+    "Are you sure?",
+    "If you say so...",
+    "You're not *wrong* per se.",
+    "Well, in theory, yes.",
+    "Let's say yes… for now.",
+    "You might be overthinking it. Or not.",
+    "Are you sure you want to lock that in?",
+    "Interesting choice.",
+    "Bold move.",
+    "That's... one way to go.",
+    "Okay, if you're confident.",
+    "Not what I would've picked.",
+    "You're really going with that?",
+    "Huh. Unexpected.",
+    "Fascinating answer.",
+    "That's your final answer?",
+    "I mean... it could be right.",
+    "Interesting logic.",
+    "That's certainly... something.",
+    "You seem oddly confident.",
+    "Let's hope the universe agrees.",
+    "Well, that's an interpretation.",
+    "Sure, why not?",
+    "You've made your choice.",
+    "I admire your courage.",
+    "Could be worse. Probably.",
+    "That's a direction, I guess.",
+    "No going back now.",
+    "Let's see if that pays off.",
+    "Confidence is half the battle."
+  ];

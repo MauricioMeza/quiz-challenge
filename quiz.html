@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz</title>
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./src/styles.css">
 </head>
 <body>
     <div class="container container-quiz-light">
@@ -18,26 +18,43 @@
             <h6 id="question-text">Which of the following is the term for surgical complications resulting from surgical sponges left inside the patient's body?</h6>
             <form onsubmit="submitAnswer(event); return false;">
                 <div id="options">
-                    <div class="option" id="option1" onclick="selectOption(1)">
-                        <p class="option-letter">B</p>
-                        <p class="option-txt">Retained surgical sponge</p>
+                    <div class="option-container">
+                        <input type="radio" value="0" id="opt0" name="answer" onchange="selectOption(event, 0)" required/>
+                        <label class="option" for="opt0">
+                            <p class="option-letter">A</p>
+                            <p class="option-txt">Retained surgical sponge </p>
+                        </label>
+
                     </div>
-                    <div class="option" id="option1" onclick="selectOption(2)">
-                        <p class="option-letter">C</p>
-                        <p class="option-txt">Retained surgical sponge</p>
+                    <div class="option-container">
+                        <input type="radio" value="0" id="opt1" name="answer" onchange="selectOption(event, 1)" required/>
+                        <label class="option" for="opt0">
+                            <p class="option-letter">B</p>
+                            <p class="option-txt">Retained surgical sponge</p>
+                        </label>
+
                     </div>
-                    <div class="option" id="option1" onclick="selectOption(3)">
-                        <p class="option-letter">D</p>
-                        <p class="option-txt">Retained surgical sponge</p>
+                    <div class="option-container">
+                        <input type="radio" value="0" id="opt2" name="answer" onchange="selectOption(event, 2)" required/>
+                        <label class="option" for="opt0">
+                            <p class="option-letter">C</p>
+                            <p class="option-txt">Retained surgical sponge</p>
+                        </label>
+
                     </div>
-                    <div class="option" id="option1" onclick="selectOption(3)">
-                        <p class="option-letter">E</p>
-                        <p class="option-txt">Retained surgical sponge</p>
+                    <div class="option-container">
+                        <input type="radio" value="0" id="opt3" name="answer" onchange="selectOption(event, 3)" required/>
+                        <label class="option" for="opt0">
+                            <p class="option-letter">D</p>
+                            <p class="option-txt">Retained surgical sponge</p>
+                        </label>
+
                     </div>
-                    <div class="option" id="option1" onclick="selectOption(3)">
-                        <p class="option-letter">F</p>
-                        <p class="option-txt">Retained surgical sponge</p>
-                    </div>
+
+                </div>
+                <div class="option-face">
+                    <canvas id="face-canvas" width="300" height="200"></canvas>
+                    <div class="face-speech">Select the correct answer</div>
                 </div>
                 <button id="question-nxt">
                     Next
@@ -45,7 +62,11 @@
             </form>
         </div>
     </div>
-    <script src="./data.js"></script>
-    <script src="./quiz.js"></script>
+    <script src="./src/env.js"></script>
+    <script src="./src/data.js"></script>
+    <script src="./src/quiz.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.141.0/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.141.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="./src/3d.js"></script> 
 </body>
 </html>
