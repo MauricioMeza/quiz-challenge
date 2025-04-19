@@ -2,16 +2,25 @@
 /*------THREE.JS BOILERPLATE----*/
 /*------------------------------*/
 
-/*-----Canvas/Renderer Setup-----*/
+/*-----Canvas/Renderer/Scene Setup-----*/
 const canvas = document.getElementById('face-canvas');
 const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true});
-const width = canvas.clientWidth;
-const height = canvas.clientHeight;
-renderer.setSize(width, height);
-/*------Scene/Camera Setup-------*/
 const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(45, width/height, 0.1, 1000);
+const camera = new THREE.PerspectiveCamera(45, canvas.clientWidth/canvas.clientHeight, 0.1, 1000);
 camera.position.z = 2.75;
+
+/*-----Canvas Window Resize-----*/
+function updateRendererSize() {
+    const width = canvas.clientWidth;
+    const height = canvas.clientHeight;
+    renderer.setSize(width, height, false);
+    camera.aspect = width / height;
+    camera.updateProjectionMatrix();
+}
+updateRendererSize();
+window.addEventListener('resize', updateRendererSize);
+
+/*------Scene/Camera Setup-------*/
 
 /*------------------------------*/
 /*------SCREEN SPACE SETUP------*/

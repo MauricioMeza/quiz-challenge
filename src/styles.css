@@ -46,8 +46,16 @@ h1, h2, h3, h4, h5 {
 
 #face-canvas{
     display: block;
-    margin: 0;
+    margin: auto;
     pointer-events: none;
+    max-width: 500px;
+    max-height: 350px;
+    height: auto;
+}
+
+.option-face #face-canvas{
+    max-width: 300px;
+    max-height: 200px;
 }
 
 .face-speech{
@@ -95,8 +103,9 @@ h1, h2, h3, h4, h5 {
     background-image: url('../resources/Ai(2).png');
 }
 @media (max-width: 1200px) {
-    .container-blue{
-        flex-direction: column;
+    .welcome-face{
+        visibility: hidden;
+        position: absolute;
     }
 }
 @media (min-aspect-ratio: 3/2) {
@@ -240,6 +249,11 @@ h6{
     background-color: var(--main-color-light);
     color: var(--main-color);
     background-image: url('../resources/Ai(1,5).png');
+    min-height: 100vh;
+}
+
+.container{
+    position: relative;
     min-height: 100vh;
 }
 
@@ -461,9 +475,13 @@ input[type="radio"] {
         width: 80%;
     }
     .option-face{
-        display: none ;
+        visibility: hidden;
+        position: absolute;
     }
 }
+
+
+
 
 
 
